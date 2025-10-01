@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nombre": "Sergi",
+      "email": "sergi@example.com",
+      "edad": 21
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Camiseta",
+      "price": 19
+    },
+    {
+      "id": 2,
+      "title": "Pantalones",
+      "price": 49
+    },
+    {
+      "id": 3,
+      "title": "Zapatos",
+      "price": 89
+    }
+  ]
+}
