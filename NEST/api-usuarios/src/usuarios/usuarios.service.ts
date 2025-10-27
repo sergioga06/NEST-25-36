@@ -1,31 +1,53 @@
 import { Injectable } from '@nestjs/common';
 import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
+import { IRespUser, IUser } from './interfaces/IUsuarios';
+import { Repository } from 'typeorm';
+import { Usuario } from './entities/usuario.entity';
+import { InjectRepository } from '@nestjs/typeorm';
 
 // Definir la interfaz para un usuario
+type Data = { users: IUser[] }
 @Injectable()
 export class UsuariosService {
-    private db: Low<any>;
-    constructor() {
-        const adaptador = new JSONFile('src/db/db.json');
-        this.db = new Low(adaptador, { users: [] });
-        
-    }
-    async findAll() {
-        await this.db.read(); // aqui el codigo se bloquea
-        return this.db.data.users;
-    }
+  //private db: Low<Data>;
+  
+  //inyectar ORM en SERVICIO
+  //inyectar el repositorio de usuarios en el servicio UsuarioService
+  
+  constructor(
+    @InjectRepository(Usuario) 
+    private readonly usuarioRepository: Repository<Usuario>) {
+    // const adaptador = new JSONFile<Data>('common/db/db.json');
+    // this.db = new Low<Data>(adaptador, { users: [] } );
+  }
 
-    async new(){
-        await this.db.read(); // Carga el fichero JSON
-        const user = { id: 8, name: 'Fran', email: 'fran@example.com' }; // Nuevo usuario a añadir
-        this.db.data.users.push(user); // Añade el fichero JSON pero carga en la RAM
-        this.db.write();// Escribe en el fichero JSON el nuevo usuario para poder cargarlo
-        console.log(this.db.data.users); // Muestra en la terminal los usuarios
-        return {
-            msg :'Usuario creado',
-            data: this.db.data.users
-        };
+  async findOne(id: number): Promise<IUser | null>{
+    console.log(id)
+    // const data = await this.db.read();//se bloquea
+ //   const usuario = this.db.data.users.find(usuario => usuario.id === parseInt(id));
+   // console.log(usuario)
+    return null;
+  }
+  async findAll(){
+    // await this.db.read();//se bloquea
+    // return this.db.data.users;
+  }
+
+  async new(usuariDTO: IUser):Promise<IRespUser>{
+    /* transformar el objeto usuario dto en una entidad usuario */
+    //insertr el objeto usuario en la base de datos
+    const usuarioEntity = this.usuarioRepository.create(usuariDTO);
+    await this.usuarioRepository.save(usuarioEntity); 
+    // await this.db.read();// cargo la base de datos
+    // this.db.data.users.push(usuario); //inserta en el array users
+    // await this.db.write(); //escribe en el fichero
+    return {
+      status: true,
+      code: 200,
+      msg: 'Usuario creado',
+      data: usuarioEntity
     }
+  }
 }
 
