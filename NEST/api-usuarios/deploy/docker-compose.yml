@@ -5,9 +5,9 @@ services:
     container_name: postgresSB
     restart: always
     environment:
-      POSTGRESS_USER: admin
-      POSTGRESS_PASSWORD: admin
-      POSTGRESS_DB: bdusuarios
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: bdusuarios
     ports:
       - '5432:5432'
     volumes:
