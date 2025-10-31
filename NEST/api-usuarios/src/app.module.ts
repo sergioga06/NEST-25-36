@@ -5,10 +5,13 @@ import { UsuariosModule } from './usuarios/usuarios.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Type } from 'class-transformer';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { SeedModule } from './modulos/seed/seed.module';
+import { ClientesModule } from './clientes/clientes.module';
 
 @Module({
   imports: [
     UsuariosModule,
+    ClientesModule,
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -19,7 +22,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: process.env.DB_NAME,
       autoLoadEntities: true,
       synchronize: true,
-    })
+    }),
+    SeedModule
   ],
   controllers: [AppController],
   providers: [AppService],

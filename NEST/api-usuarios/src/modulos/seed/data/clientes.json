@@ -1,0 +1,102 @@
+[
+  {
+    "nif": "12345678A",
+    "name": "Laura Martínez",
+    "edad": 29,
+    "email": "laura.martinez@example.com",
+    "comision": 0.3,
+    "calle": "Calle Gran Vía",
+    "pais": "España",
+    "numero": 45
+  },
+  {
+    "nif": "87654321B",
+    "name": "Carlos Gómez",
+    "edad": 35,
+    "email": "carlos.gomez@example.com",
+    "comision": 0.3,
+    "calle": "Avenida Diagonal",
+    "pais": "España",
+    "numero": 210
+  },
+  {
+    "nif": "11223344C",
+    "name": "María López",
+    "edad": 41,
+    "email": "maria.lopez@example.com",
+    "comision": 0.3,
+    "calle": "Calle Alcalá",
+    "pais": "España",
+    "numero": 102
+  },
+  {
+    "nif": "44332211D",
+    "name": "José Fernández",
+    "edad": 54,
+    "email": "jose.fernandez@example.com",
+    "comision": 0.3,
+    "calle": "Calle Mayor",
+    "pais": "España",
+    "numero": 7
+  },
+  {
+    "nif": "99887766E",
+    "name": "Ana Sánchez",
+    "edad": 27,
+    "email": "ana.sanchez@example.com",
+    "comision": 0.3,
+    "calle": "Paseo del Prado",
+    "pais": "España",
+    "numero": 12
+  },
+  {
+    "nif": "55443322F",
+    "name": "Miguel Torres",
+    "edad": 38,
+    "email": "miguel.torres@example.com",
+    "comision": 0.3,
+    "calle": "Calle Serrano",
+    "pais": "España",
+    "numero": 88
+  },
+  {
+    "nif": "66778899G",
+    "name": "Lucía Navarro",
+    "edad": 23,
+    "email": "lucia.navarro@example.com",
+    "comision": 0.3,
+    "calle": "Calle Larios",
+    "pais": "España",
+    "numero": 14
+  },
+  {
+    "nif": "22113344H",
+    "name": "Pedro Ruiz",
+    "edad": 49,
+    "email": "pedro.ruiz@example.com",
+    "comision": 0.3,
+    "calle": "Avenida de la Constitución",
+    "pais": "España",
+    "numero": 66
+  },
+  {
+    "nif": "88990011J",
+    "name": "Beatriz Morales",
+    "edad": 31,
+    "email": "beatriz.morales@example.com",
+    "comision": 0.3,
+    "calle": "Calle San Vicente",
+    "pais": "España",
+    "numero": 22
+  },
+  {
+    "nif": "33445566K",
+    "name": "Javier Castillo",
+    "edad": 43,
+    "email": "javier.castillo@example.com",
+    "comision": 0.3,
+    "calle": "Rambla Nova",
+    "pais": "España",
+    "numero": 5
+  }
+]

@@ -7,8 +7,8 @@ export class ClientesController {
   //controlador --> servicio (inyectar servicio)
   constructor(private readonly clientesService: ClientesService) {}
 
-  @Post()
-  add (@Body() clienteDTO: CreateClienteDto) {
-    
+  @Post('New')
+  add (@Body() createClienteDto: CreateClienteDto) {
+    return this.clientesService.create(createClienteDto);
   }
 }
